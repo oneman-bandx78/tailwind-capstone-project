@@ -1,58 +1,633 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind Capstone Project</title>
 
-    <!-- google font -->
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+
+    <!-- google font outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
+    <!-- fa cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- font inter -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
     <!-- custom css -->
     <link rel="stylesheet" href="../dist/output.css">
 
+    <link rel="stylesheet" href="../node_modules/remixicon/fonts/remixicon.css">
+
+
+
 </head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
 <body>
 
     <!-- START HEADER -->
-    <header></header>
+    <header id="header" class="pt-5 pb-5 fixed-nav duration-500">
+        <div class="menuMobile flex">
+            <ul id="listMenuMobile"
+                class=" absolute lg:hidden  py-4 pl-3 w-96   shadow top-0 left-0 leading-10 bg-primaryColor text-white tracking-wider h-screen  -translate-x-full duration-500 ease-in-out  z-20 ">
+                <li><a href="#">Home</a></li>
+                <li><a href="">Features</a></li>
+                <li class="dropdown">
+                    <a href="#" id="pageMobile" class="flex items-center">Pages <i id="caretDownMobile"
+                            class="fa-solid fa-caret-down ml-2 duration-300 rotate-0 "></i></a>
+
+                    <ul id="listPageMobile" class="ml-4 border pl-2 w-72 hidden ">
+                        <li>Blog Grid 1</li>
+                        <li>Blog Grid 2</li>
+                        <li>Blog Grid 3</li>
+                        <li>Blog Grid 4</li>
+                        <li>Blog Grid 5</li>
+                    </ul>
+                </li>
+
+                <li><a href="">Support</a></li>
+                <li>
+                    <div class="mt-4">
+                        <a class="py-3 px-6  rounded-full bg-[#303b6e]" href="">Sign In</a>
+
+                        </a>
+
+                        <a class="ml-1 py-3 px-6 mx-2 rounded-full bg-[#303b6e]" href="">
+                            Sign Up
+                        </a>
+                    </div>
+
+                </li>
+
+            </ul>
+
+
+
+        </div>
+
+        <div id="blackLayer" class="bg-[#0000008a] hidden absolute z-10 top-0 right-0 w-full h-screen"></div>
+
+        <div class="container  flex items-center justify-between relative">
+            <img src="../assets/logo-light.svg" class="dark:hidden" alt="">
+            <img src="../assets/logo-dark.svg" class="hidden dark:block" alt="">
+            <ul id="listMenu" class="  hidden lg:flex relative z-20 ">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li class="dropdown">
+                    <a href="#" class="flex items-center">Pages <i class="fa-solid fa-caret-down ml-2 "></i></a>
+
+                    <ul class="list-page ">
+                        <li>Blog Grid 1</li>
+                        <li>Blog Grid 2</li>
+                        <li>Blog Grid 3</li>
+                        <li>Blog Grid 4</li>
+                        <li>Blog Grid 5</li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Support</a></li>
+            </ul>
+
+            <div class="sm:flex space-x-5 lg:hidden ">
+                <i id="themeIconMobile"
+                    class="changeIconColor ri-sun-line text-2xl  text-white cursor-pointer hover:text-primaryColor duration-300 z-10"></i>
+                <i id="iconMenuBar"
+                    class="ri-menu-line text-2xl text-black dark:text-white cursor-pointer hover:text-primaryColor duration-300 z-10"></i>
+            </div>
+            <div class="sm:hidden lg:flex items-center">
+                <i id="themeIconDesktop"
+                    class="changeIconColor ri-sun-line text-2xl text-white cursor-pointer hover:text-primaryColor duration-300 z-10"></i>
+                <a class="changeIconColor mx-5 tracking-wider text-white hover:text-primaryColor duration-300 z-10"
+                    href="">
+                    Sign In
+                </a>
+                <a class="button-primary" href="">
+                    Sign Up
+                </a>
+
+            </div>
+
+
+        </div>
+    </header>
     <!-- END HEADER -->
 
     <!-- START MAIN -->
     <main>
         <!-- ---START BANNER -->
-        <section id="banner">
-            <div class="container">
-                <h1 class="text-pink text-5xl shadow-custom">Marketing</h1>
-                
+        <section id="banner" class=" relative">
+            <div class="container flex ">
+                <div class="basis-1/2 space-y-7 animate-bannerTextToRightAni">
+                    <h1 class="text-4xl lg:text-5xl font-semibold text-opacity-100 leading-tight dark:text-white">We
+                        specialize in
+                        UI/UX, Web Development, Digital
+                        Marketing.</h1>
+                    <p class="text-text_1 text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                        fringilla magna mauris. Nulla
+                        fermentum viverra sem eu
+                        rhoncus consequat varius nisi quis, posuere magna.</p>
+                    <div class="flex flex-col lg:flex-row gap-5 items-center">
+                        <div class="button-primary">Get Started Now</div>
+                        <div class="text-center lg:text-start">
+                            <a href="" class="text-text_2 text-lg font-medium dark:text-white">Call us (0123) 456 – 789</a>
+                            <p class="text-lg text-text_1">For any question or concern</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="">
+                    <img src="../assets/shape-04.svg"
+                        class="md:w-1/2  absolute z-0 top-[-89px] right-0 xl:w-[40%]  sm:w-[45%] " alt="">
+                    <img src="../assets/hero.png"
+                        class="w-1/2  absolute z-0 top-[-89px] right-0 xl:w-[40%] sm:w-[45%] md:w-1/2" alt="">
+                    <img src="../assets/shape-01.svg"
+                        class="hidden xl:block absolute top-[50%] -translate-y-1/2 left-[56%]" alt="">
+                    <img src="../assets/shape-03.svg" class="hidden xl:block absolute top-[117%] left-[67%]" alt="">
+                    <img src="../assets/shape-02.svg" class="hidden xl:block absolute  top-[129%] left-[88%]" alt="">
+                </div>
             </div>
+
+
+
         </section>
         <!-- ---END BANNER -->
 
         <!-- ---START ABOUT -->
-        <section id="about"></section>
+        <section id="about" class="xl:mt-36">
+            <div class="container flex gap-7  justify-center flex-wrap  md:flex-nowrap">
+                <div
+                    class="reveal-about-icon flex gap-5 items-center flex-wrap lg:flex-nowrap justify-center sm:text-start md:text-center lg:text-start">
+                    <img src="../assets/icon-01.svg" class=" rounded-full bg-pink w-20 h-20 p-6" alt="">
+                    <div class="">
+                        <h2 class="text-2xl font-medium dark:text-white">24/7 Support</h2>
+                        <p class="paragraph w-56">Lorem ipsum dolor sit amet conse adipiscing elit</p>
+                    </div>
+                </div>
+                <div
+                    class="reveal-about-icon2 flex gap-5 items-center flex-wrap  lg:flex-nowrap justify-center  sm:text-start md:text-center lg:text-start">
+                    <img src="../assets/icon-02.svg" class=" rounded-full bg-green w-20 h-20 p-6" alt="">
+                    <div class="">
+                        <h2 class="text-2xl font-medium dark:text-white">24/7 Support</h2>
+                        <p class="paragraph w-56">Lorem ipsum dolor sit amet conse adipiscing elit</p>
+                    </div>
+                </div>
+                <div
+                    class="reveal-about-icon3 flex gap-5 items-center flex-wrap lg:flex-nowrap justify-center  sm:text-start md:text-center lg:text-start">
+                    <img src="../assets/icon-03.svg" class=" rounded-full bg-orange w-20 h-20 p-6" alt="">
+                    <div class="">
+                        <h2 class="text-2xl font-medium dark:text-white">24/7 Support</h2>
+                        <p class="paragraph w-56">Lorem ipsum dolor sit amet conse adipiscing elit</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-24 flex flex-col md:flex-row gap-10 items-center relative">
+                <div class="reveal-about-img md:w-1/2 flex sm:gap-5 md:gap-10 items-center ">
+                    <div class="flex flex-col sm:gap-5 md:gap-10 md:w-[46%]">
+                        <img src="../assets/about-01.png" class="" alt="">
+                        <img src="../assets/about-02.png" alt="" class="">
+                    </div>
+                    <div class=" md:w-[46%]"><img src="../assets/about-03.png" class="" alt=""></div>
+                </div>
+                <div class="reveal-about-text md: w-1/2 space-y-7">
+                    <p class="text-primaryColor text-lg font-semibold tracking-wider">Why Choose Us</p>
+                    <h1 class="title ">We Make Our customers happy by giving Best services.</h1>
+                    <p class="paragraph">It is a long established fact that a reader will be distracted by the readable
+                        content of a page when looking at its
+                        layout. The point of using Lorem Ipsum.</p>
+                    <div class="flex gap-5 items-center">
+                        <i id="playIcon"
+                            class="ri-play-fill flex justify-center items-center text-2xl  text-white rounded-full w-12 h-12 bg-bgPrimary cursor-pointer relative "></i>
+                        <p class="text-lg text-text_2 cursor-pointer dark:text-text_1">SEE HOW WE WORK</p>
+                    </div>
+                </div>
+
+
+
+                <img src="../assets/shape-05.svg" class=" absolute top-[21px] left-[8px] hidden lg:block" alt="">
+                <img src="../assets/shape-06.svg" class=" absolute top-[2px] left-[336px] hidden lg:block" alt="">
+                <img src="../assets/shape-07.svg" class=" absolute bottom-0 right-[58%] hidden lg:w-[15%]  lg:block"
+                    alt="">
+
+            </div>
+        </section>
         <!-- ---END ABOUT -->
 
         <!-- ---START TEAM -->
-        <section id="team"></section>
+        <section id="team" class="relative ">
+
+            <div class="  bg-bg_2  dark:bg-bgDark  ">
+                <div
+                    class="reveal-team-text bg-custom-shape bg-center xl:bg-custom-pos  bg-cover bg-no-repeat  h-[450px] xl:h-[550px] flex flex-col text-center items-center space-y-7 pt-24 xl:pt-28">
+                    <h1 class="title ">Meet With Our Creative Dedicated Team</h1>
+                    <p class="paragraph w-2/3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+                        tortor eros. Donec
+                        vitae tortor lacus. Phasellus
+                        aliquam ante in maximus.</p>
+                </div>
+            </div>
+
+
+
+            <div
+                class=" container text-center flex flex-col items-center  absolute top-[333px] xl:top-[391px] left-1/2 -translate-x-1/2">
+
+                <div class=" flex flex-col md:flex-row justify-center gap-12 sm:pt-20 md:pt-10">
+                    <div class="reveal-team-img1">
+                        <div class=" relative overflow-hidden group">
+                            <img src="../assets/team-01.png" alt="">
+                            <div
+                                class="absolute w-full h-full  top-0 left-0 translate-y-[28%] transition-transform   duration-500 group-hover:translate-y-0">
+                                <div
+                                    class=" absolute w-[106%] h-[28%] bg-bgPrimary bottom-[-17px] left-[-8px] rotate-[6deg] z-[3]  ">
+                                </div>
+                                <div class="  absolute w-full h-[28%] bg-pink bottom-[-14px] left-0 z-[2] ">
+                                </div>
+
+                                <div class=" flex absolute bottom-5 z-[4] left-1/2 -translate-x-1/2  gap-7 text-white ">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <i class="fa-brands fa-twitter"></i>
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="text-2xl mt-7 dark:text-white">Olivia Andrium</h2>
+                        <p class="paragraph">Product Manager</p>
+
+                    </div>
+                    <div class="reveal-team-img2">
+                        <div class=" relative overflow-hidden group">
+                            <img src="../assets/team-02.png" alt="">
+                            <div
+                                class="absolute w-full h-full  top-0 left-0 translate-y-[28%] transition-transform   duration-500 group-hover:translate-y-0">
+                                <div
+                                    class=" absolute w-[106%] h-[28%] bg-bgPrimary bottom-[-17px] left-[-8px] rotate-[6deg] z-[3]  ">
+                                </div>
+                                <div class="  absolute w-full h-[28%] bg-pink bottom-[-14px] left-0 z-[2] ">
+                                </div>
+
+                                <div class=" flex absolute bottom-5 z-[4] left-1/2 -translate-x-1/2  gap-7 text-white ">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <i class="fa-brands fa-twitter"></i>
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="text-2xl mt-7 dark:text-white">Jemse Kemorun</h2>
+                        <p class="paragraph">Product Designer</p>
+
+                    </div>
+                    <div class="reveal-team-img3">
+                        <div class=" relative overflow-hidden group">
+                            <img src="../assets/team-03.png" alt="">
+                            <div
+                                class="absolute w-full h-full  top-0 left-0 translate-y-[28%] transition-transform   duration-500 group-hover:translate-y-0">
+                                <div
+                                    class=" absolute w-[106%] h-[28%] bg-bgPrimary bottom-[-17px] left-[-8px] rotate-[6deg] z-[3]  ">
+                                </div>
+                                <div class="  absolute w-full h-[28%] bg-pink bottom-[-14px] left-0 z-[2] ">
+                                </div>
+
+                                <div class=" flex absolute bottom-5 z-[4] left-1/2 -translate-x-1/2  gap-7 text-white ">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <i class="fa-brands fa-twitter"></i>
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="text-2xl mt-7 dark:text-white">Avi Pestarica</h2>
+                        <p class="paragraph">Web Designer</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <img src="../assets/shape-10.svg" class=" absolute top-[21%] left-[20%] hidden lg:block" alt="">
+            <img src="../assets/shape-11.svg" class=" absolute right-[16%] top-[34%] animate-moveAni hidden lg:block"
+                alt="">
+            <img src="../assets/shape-09.svg" class=" absolute bottom-[6%] left-[11%] animate-moveAni hidden lg:block"
+                alt="">
+        </section>
         <!-- ---END TEAM -->
 
         <!-- ---START SERVICES -->
-        <section id="services"></section>
+        <section id="services" class="pt-[1404px] md:pt-52 lg:pt-80 ">
+            <div class="container">
+                <div class="reveal-service-text flex flex-col text-center items-center space-y-7 ">
+                    <h1 class="title ">We Offer The Best Quality Service for You</h1>
+                    <p class="paragraph w-2/3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+                        tortor eros. Donec
+                        vitae tortor lacus. Phasellus
+                        aliquam ante in maximus.</p>
+                </div>
+                <div class=" mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="reveal-service-item1">
+                        <div
+                            class=" hover:shadow-customService duration-300 hover:bg-white  dark:hover:bg-bgCardDark py-12 px-8 space-y-7 rounded-lg text-center md:text-start">
+                            <div class="flex justify-center md:justify-start">
+                                <img src="../assets/icon-04.svg" alt="">
+                            </div>
+                            <h2 class="text-2xl font-medium dark:text-white">Crafted for Startups</h2>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+                                tortor.</p>
+                        </div>
+                    </div>
+                    <div class="reveal-service-item2">
+                        <div
+                            class=" hover:shadow-customService duration-300 hover:bg-white dark:hover:bg-bgCardDark py-12 px-8 space-y-7 rounded-lg text-center md:text-start">
+                            <div class="flex justify-center md:justify-start">
+                                <img src="../assets/icon-05.svg" alt="">
+                            </div>
+                            <h2 class="text-2xl font-medium dark:text-white">Crafted for Startups</h2>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+                                tortor.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal-service-item3">
+                        <div
+                            class="hover:shadow-customService duration-300 hover:bg-white dark:hover:bg-bgCardDark py-12 px-8 space-y-7 rounded-lg text-center md:text-start">
+                            <div class="flex justify-center md:justify-start">
+                                <img src="../assets/icon-06.svg" alt="">
+                            </div>
+                            <h2 class="text-2xl font-medium dark:text-white">Crafted for Startups</h2>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+                                tortor.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal-service-item4">
+                        <div
+                            class=" hover:shadow-customService duration-300 hover:bg-white dark:hover:bg-bgCardDark py-12 px-8 space-y-7 rounded-lg text-center md:text-start">
+                            <div class="flex justify-center md:justify-start">
+                                <img src="../assets/icon-07.svg" alt="">
+                            </div>
+                            <h2 class="text-2xl font-medium dark:text-white">Crafted for Startups</h2>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+                                tortor.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal-service-item5">
+                        <div
+                            class=" hover:shadow-customService duration-300 hover:bg-white dark:hover:bg-bgCardDark py-12 px-8 space-y-7 rounded-lg text-center md:text-start">
+                            <div class="flex justify-center md:justify-start">
+                                <img src="../assets/icon-04.svg" alt="">
+                            </div>
+                            <h2 class="text-2xl font-medium dark:text-white">Crafted for Startups</h2>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+                                tortor.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal-service-item6">
+                        <div
+                            class=" hover:shadow-customService duration-300 hover:bg-white dark:hover:bg-bgCardDark py-12 px-8 space-y-7 rounded-lg text-center md:text-start">
+                            <div class="flex justify-center md:justify-start">
+                                <img src="../assets/icon-05.svg" alt="">
+                            </div>
+                            <h2 class="text-2xl font-medium dark:text-white">Crafted for Startups</h2>
+                            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+                                tortor.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
         <!-- ---END SERVICES -->
 
         <!-- ---START OFFER -->
-        <section id="offer"></section>
+        <section id="offer" class="pb-24 min-h-screen bg-bg_2 dark:bg-bgCardDark relative z-0">
+            <div class="container">
+                <div class="reveal-offer-text flex flex-col text-center items-center space-y-7 ">
+                    <h1 class="title ">We Offer Great Affordable Premium Prices.</h1>
+                    <p class="paragraph w-2/3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+                        tortor eros. Donec
+                        vitae tortor lacus. Phasellus
+                        aliquam ante in maximus.</p>
+                </div>
+                <div class="  flex flex-col items-center">
+                    <div class="reveal-offer-switch relative">
+                        <div class=" my-12 flex gap-5 items-center">
+                            <p id="billMonthly" class="text-text_2 dark:text-white text-lg tracking-wider">Bill Monthly</p>
+                            <!-- Toggle Switch -->
+                            <label for="toggle" class="relative z-[999] cursor-pointer w-12 ">
+                                <!-- Hidden Checkbox -->
+                                <input type="checkbox" id="toggle" class="sr-only peer">
+
+                                <!-- Switch Background -->
+                                <div
+                                    class="w-12 h-6 bg-primaryColor rounded-full  transition-all duration-300 peer-checked:bg-green">
+                                </div>
+
+                                <!-- Switch Knob -->
+                                <div
+                                    class="absolute z-10 top-1/2 -translate-y-1/2 left-0.5 w-5 h-5 bg-white rounded-full shadow-md transition-all duration-300 peer-checked:left-[26px] peer-checked:bg-primaryColor">
+                                </div>
+                            </label>
+                            <p id="billAnnually" class="text-text_2 dark:text-white text-lg tracking-wider">Bill Annually</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
+                        <div class="block-card reveal-card-1">
+                            <div
+                                class="block-card-item1 rotateY-180 bg-white dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg sm:w-[390px] md:w-full">
+                                <h2 class="text-2xl font-medium dark:text-white ">Starter</h2>
+                                <div class="space-y-3 flex flex-col items-center">
+                                    <p class="flex gap-2 justify-center items-center dark:text-white"> <span
+                                            class="text-4xl font-semibold ">$29</span>
+                                        /per month </p>
+                                    <p class="paragraph">No credit card required</p>
+                                    <button class="button-primary !mt-7 bg-pink tracking-wider md:w-3/4">Try for
+                                        free</button>
+                                    <p class="paragraph">400 GB Storaget</p>
+                                    <p class="paragraph">Unlimited Photos & Videos</p>
+                                    <p class="paragraph">Exclusive Support</p>
+                                </div>
+                                <p class="dark:text-white">7-day free trial</p>
+                            </div>
+                            <div
+                                class="block-card-item2 rotateY-0 bg-white  dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg sm:w-[390px] md:w-full">
+                                <h2 class="text-2xl font-medium  ">Starter</h2>
+                                <div class="space-y-3 flex flex-col items-center ">
+                                    <p class="flex gap-2 justify-center items-center line-through"> <span class="text-xl font-semibold ">$348</span>
+                                        /per year </p>
+                                    <p class="flex gap-2 justify-center items-center"> <span
+                                            class="text-4xl font-semibold ">$149</span >
+                                        /per year </p>
+                                    <p class="paragraph !text-white">No credit card required</p>
+                                    <button class="button-primary !mt-7 bg-primaryColor tracking-wider md:w-3/4">Try for
+                                        free</button>
+                                    <p class="paragraph !text-white">400 GB Storaget</p>
+                                    <p class="paragraph !text-white">Unlimited Photos & Videos</p>
+                                    <p class="paragraph !text-white">Exclusive Support</p>
+                                </div>
+                                <p class="">7-day free trial</p>
+                            </div>
+                        </div>
+
+                        <div class="block-card reveal-card-2">
+                            <div
+                                class=" block-card-item1  bg-white dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg">
+                                <h2 class="text-2xl font-medium dark:text-white ">Growth Plan</h2>
+                                <div class="space-y-3 flex flex-col items-center">
+                                    <p class="flex gap-2 justify-center items-center dark:text-white"> <span
+                                            class="text-4xl font-semibold">$59</span>
+                                        /per month </p>
+                                    <p class="paragraph">No credit card required</p>
+                                    <button class="button-primary !mt-7 bg-primaryColor tracking-wider md:w-3/4">Try for
+                                        free</button>
+                                    <p class="paragraph">400 GB Storaget</p>
+                                    <p class="paragraph">Unlimited Photos & Videos</p>
+                                    <p class="paragraph">Exclusive Support</p>
+                                </div>
+                                <p class="dark:text-white">7-day free trial</p>
+                            </div>
+                            <div
+                                class="block-card-item2  bg-white  dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg sm:w-[390px] md:w-full">
+                                <h2 class="text-2xl font-medium  ">Growth Plan</h2>
+                                <div class="space-y-3 flex flex-col items-center ">
+                                    <p class="flex gap-2 justify-center items-center line-through"> <span class="text-xl font-semibold ">$708</span>
+                                        /per year </p>
+                                    <p class="flex gap-2 justify-center items-center "> <span class="text-4xl font-semibold ">$508</span>
+                                        /per month </p>
+                                    <p class="paragraph !text-white">No credit card required</p>
+                                    <button class="button-primary !mt-7 bg-primaryColor tracking-wider md:w-3/4">Try for
+                                        free</button>
+                                    <p class="paragraph !text-white">400 GB Storaget</p>
+                                    <p class="paragraph !text-white">Unlimited Photos & Videos</p>
+                                    <p class="paragraph !text-white">Exclusive Support</p>
+                                </div>
+                                <p class="">7-day free trial</p>
+                            </div>
+                        </div>
+
+
+                        <div class="block-card reveal-card-3">
+                            <div
+                                class="block-card-item1  bg-white dark:bg-bgOfferCardDark  space-y-10 text-center p-12 rounded-lg">
+                                <h2 class="text-2xl font-medium dark:text-white ">Business</h2>
+                                <div class="space-y-3 flex flex-col items-center">
+                                    <p class="flex gap-2 justify-center items-center dark:text-white"> <span
+                                            class="text-4xl font-semibold">$139</span>
+                                        /per month </p>
+                                    <p class="paragraph">No credit card required</p>
+                                    <button class="button-primary !mt-7 bg-pink tracking-wider md:w-3/4">Try for
+                                        free</button>
+                                    <p class="paragraph">400 GB Storaget</p>
+                                    <p class="paragraph">Unlimited Photos & Videos</p>
+                                    <p class="paragraph">Exclusive Support</p>
+                                </div>
+                                <p class="dark:text-white">7-day free trial</p>
+                            </div>
+                            <div
+                                class="block-card-item2  bg-white  dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg sm:w-[390px] md:w-full">
+                                <h2 class="text-2xl font-medium  ">Business</h2>
+                                <div class="space-y-3 flex flex-col items-center ">
+                                    <p class="flex gap-2 justify-center items-center line-through"> <span class="text-xl font-semibold ">$1668</span>
+                                        /per year </p>
+                                    <p class="flex gap-2 justify-center items-center "> <span class="text-4xl font-semibold ">$1468</span>
+                                        /per month </p>
+                                    <p class="paragraph !text-white">No credit card required</p>
+                                    <button class="button-primary !mt-7 bg-primaryColor tracking-wider md:w-3/4">Try for
+                                        free</button>
+                                    <p class="paragraph !text-white">400 GB Storaget</p>
+                                    <p class="paragraph !text-white">Unlimited Photos & Videos</p>
+                                    <p class="paragraph !text-white">Exclusive Support</p>
+                                </div>
+                                <p class="">7-day free trial</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <img src="../assets/shape-12.svg" class=" absolute bottom-0 left-0 z-[-1]" alt="">
+                <img src="../assets/shape-13.svg" class="top-0 right-0 absolute -z-10" alt="">
+                <img src="../assets/shape-06.svg" class=" absolute top-[19%] left-[16%] hidden lg:block" alt="">
+                <img src="../assets/shape-03.svg" class=" absolute top-[34%] left-[73%] hidden lg:block" alt="">
+                <img src="../assets/shape-07.svg" class=" absolute w-[7%] right-[10%] hidden lg:block" alt="">
+            </div>
+        </section>
         <!-- ---END OFFER -->
 
         <!-- ---START PRODUCTS -->
-        <section id="products"></section>
+        <section id="products" class="">
+            <div class="reveal-product container ">
+
+                <div class=" flex flex-col text-center items-center space-y-7 ">
+                    <h1 class="title ">Our Product</h1>
+                    <p class="paragraph w-2/3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+                        tortor eros. Donec
+                        vitae tortor lacus. Phasellus
+                        aliquam ante in maximus.</p>
+                </div>
+
+                <div class=" flex flex-col items-center justify-center">
+                    <ul
+                        class="button-filter-group my-12 w-[80%] md:w-[90%] lg:w-[68%] xl:w-[55%] flex  justify-center md:justify-around items-center gap-1 md:gap-5 bg-white  rounded-full py-2 shadow-customService ">
+                        <li class="text-sm text-text_1 md:paragraph active-button-filter px-4  hover:text-primaryColor duration- cursor-pointer"
+                            data-filter="*">
+                            All</li>
+                        <li class="text-sm text-text_1 md:paragraph px-4 hover:text-primaryColor duration- cursor-pointer"
+                            data-filter=".brand">Branding Strategy</li>
+                        <li class="text-sm text-text_1 md:paragraph px-4 hover:text-primaryColor duration- cursor-pointer"
+                            data-filter=".digital">Digital Experiences</li>
+                        <li class="text-sm text-text_1 md:paragraph px-4 hover:text-primaryColor duration- cursor-pointer"
+                            data-filter=".ecommerce">Ecommerce</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- <div class="grid-card  grid grid-cols-3 place-items-stretch gap-10">
+                    <img class="grid-item  " src="../assets/project-01.png" alt="">
+                    <img class="grid-item " src="../assets/project-02.png" alt="">
+                    <img class="grid-item row-span-2" src="../assets/project-04.png" alt="">
+                    <img class="grid-item col-span-2" src="../assets/project-03.png" alt="">
+                </div> -->
+
+                <div class="grid-card ">
+                    <img class="grid-item brand ecommerce w-3/4 md:w-[50%] lg:w-[30%] mx-5 my-5   lg:mx-3 lg:my-3 xl:mx-5 xl:my-5 "
+                        src="../assets/project-01.png" alt="">
+                    <img class="grid-item digital w-3/4 md:w-[50%] lg:w-[30%] mx-5 my-5 lg:mx-3 lg:my-3 xl:mx-5 xl:my-5"
+                        src="../assets/project-02.png" alt="">
+                    <img class="grid-item brand w-2/4 md:w-[50%] lg:w-[30%] mx-5 my-5 lg:mx-3 lg:my-3 xl:mx-5 xl:my-5"
+                        src="../assets/project-04.png" alt="">
+                    <img class="grid-item ecommerce w-full lg:w-[62%] xl:w-[63%] mx-5 my-5 lg:mx-3 lg:my-3 xl:mx-5 xl:my-5"
+                        src="../assets/project-03.png" alt="">
+                </div>
+
+            </div>
+
+
+        </section>
         <!-- ---END PRODUCTS -->
 
         <!-- ---START TESTIMONIALS -->
-        <section id="testimonials"></section>
+        <section id="testimonials">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat facere ab molestiae nobis rem qui laboriosam laborum, fuga dolorem unde saepe maxime temporibus tempora nemo sed eius iure et ullam! Facilis reprehenderit earum quas, commodi, culpa maiores temporibus odio harum sunt doloremque asperiores repudiandae qui inventore molestiae maxime iusto obcaecati molestias ipsum natus sed praesentium iste eligendi. Ad asperiores labore quasi quis sunt facere aliquid fugiat rem ab odit voluptates modi molestiae numquam rerum deleniti quos dolores reprehenderit error, sit maiores beatae. Quisquam, ipsum, officiis ratione at, veritatis provident voluptatum voluptas sit debitis blanditiis illo iusto accusantium pariatur qui ullam itaque ipsa? Laborum ut quam consequatur! Consequatur neque illo qui ducimus ullam, aliquid sunt eveniet quam excepturi veniam similique corporis aspernatur eius, labore architecto sed tenetur quia officia. Et autem beatae saepe, quos corporis a eaque ipsa sit deserunt voluptatibus ullam quia fuga ipsum quam enim rerum similique veniam sed, sequi consectetur doloremque culpa. Nisi ipsa repellendus pariatur quae qui libero voluptas provident ducimus, necessitatibus, debitis cum nostrum incidunt, nesciunt nobis. Optio sunt eius quaerat non aliquam perspiciatis atque, reprehenderit deserunt maxime. Harum ratione tempora non rerum nobis, dolorum facere, veritatis debitis tenetur magnam odio eos fugiat facilis dolores?
+        </section>
         <!-- ---END TESTIMONIALS -->
 
         <!-- ---START STATISTICS -->
@@ -80,7 +655,20 @@
 
     <!-- START FOOTER -->
     <footer></footer>
-    <!-- END HEADER -->
-    
+    <!-- END FOOTER -->
+
+    <a id="buttonToTop" href="#" class="translate-y-[170%] flex fixed right-8 bottom-8 p-4 rounded-lg bg-primaryColor text-white tracking-wider  justify-center items-center
+    hover:-translate-y-1 hover:text-black duration-500 "><i class="fa-solid fa-chevron-up"></i></a>
+
+    <!-- isotope js -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+    <!-- scroll reveal js -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- main js -->
+    <script src="../js/main.js"></script>
+
 </body>
+
 </html>
