@@ -2,40 +2,70 @@
 
 module.exports = {
   content: ["./src/**/*.{html,js}"],
+  darkMode: "selector",
   theme: {
     screens: {
-      sm: "640px" /* min-width: 640px (mobile) */,
-      md: "768px" /* tablet */,
-      lg: "1024px" /* laptop and up */,
+      sm: "640px", // min-width: 640px (mobile)
+      md: "768px", // tablet
+      lg: "1024px", // laptop and up
       xl: "1280px",
       // 2xl: "1536px"
     },
     extend: {
       colors: {
-        primaryColor: "#ecf0f5",
+        primaryColor: "#4e6bff",
         pink: "#f36a8d",
         green: "#20ca66",
         orange: "#fa9161",
+        textTitle: "#181c31",
         text_1: "#79808a",
         text_2: "#181c31",
       },
       backgroundColor: {
-        bg_1: "#ffffff",
+        bg_1: "#fdfdfd",
         bg_2: "#f4f7fa",
         bg_3: "#ecf0f5",
+        bgPrimary: "#4e6bff",
+        bgDark: "#181c31",
+        bgCardDark: "#1c2136",
+        bgOfferCardDark: "#181c31",
+        bgBlackLayer: "#0000008a",
+        bgBlurLayer: "#ffffff30",
       },
+      // backgroundImage: {
+      //   "custom-bg-img": "linear-gradient(to bottom, blue 50%, red 50%)",
+      // },
       boxShadow: {
-        custom:
-          "0px 6px 90px rgba(8, 14, 40, 0.04)",
+        customNav: "5px 1px 2px 0px #79808a61",
+        customNavDark: "1px 1px 1px #ffffff78",
+        customService: "0px 0px 20px 0px #8080800f",
+        customeButton: "1px 3px 7px 3px #cfcfe121",
       },
-      keyframes: {},
-      animation: {},
+      keyframes: {
+        bannerTextToRight: {
+          "0%": { transform: "translateX(-10%)", opacity: 0 },
+          "100%": { transform: "translateX(0)", opacity: 1 },
+        },
+        move: {
+          "50%": { transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        bannerTextToRightAni: "bannerTextToRight 1.1s ease-in",
+        scaleAni: "scale 1s linear infinite",
+        moveAni: "move 30s linear infinite",
+      },
       fontFamily: {
         outfit: ["Outfit, sans-serif"],
         inter: ["Inter, sans-serif"],
       },
-      fontSize: {
-      }
+      fontSize: {},
+      backgroundImage: {
+        "custom-shape": "url('/assets/shape-08.svg')",
+      },
+      backgroundPosition: {
+        "custom-pos": "159px",
+      },
     },
 
     container: {
@@ -43,6 +73,7 @@ module.exports = {
       padding: {
         DEFAULT: "1rem",
         sm: "1.5rem",
+        // sm: "1rem",
       },
     },
   },

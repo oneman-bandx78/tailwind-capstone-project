@@ -5,12 +5,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
-
   },
   "author": "anh tuan",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "tailwindcss": "^3.4.12"
+  },
+  "dependencies": {
+    "remixicon": "^4.3.0"
   }
 }
