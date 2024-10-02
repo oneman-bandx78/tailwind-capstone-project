@@ -9,15 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const changeIconColors = document.querySelectorAll(".changeIconColor");
   const buttonToTop = document.getElementById("buttonToTop");
 
-  /* ===HANDLE SCROLL FIXED NAVBAR===  */
-  
+  //! ===HANDLE SCROLL FIXED NAVBAR===  */
 
-  let flag = false;
+  let checkPosition = false;
   const handleNavbarFixed = () => {
     let scrollPosition = window.scrollY;
 
-    if (scrollPosition > 200 && !flag) {
-      console.log(flag);
+    if (scrollPosition > 200 && !checkPosition) {
+      console.log(checkPosition);
 
       header.classList.add("fixed-nav");
 
@@ -25,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.replace("text-white", "text-text_1");
       });
 
-      flag = true;
-    } else if (flag && scrollPosition <= 200) {
-      console.log(flag);
+      checkPosition = true;
+    } else if (checkPosition && scrollPosition <= 200) {
+      console.log(checkPosition);
 
       header.classList.remove("fixed-nav");
 
@@ -35,11 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.replace("text-text_1", "text-white");
       });
 
-      flag = false;
+      checkPosition = false;
     }
   };
 
-  /* ===HANDLE SCROLL UP=== */
+  //! ===HANDLE SCROLL UP=== */
   const handleButtonToTop = () => {
     let scrollPosition = window.scrollY;
     if (scrollPosition > 50) {
@@ -48,13 +47,14 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // buttonToTop.classList.replace("flex", "hidden");
       buttonToTop.classList.add("translate-y-[170%]");
-
     }
   };
 
-  window.addEventListener("scroll", () => {handleNavbarFixed(), handleButtonToTop()} );
+  window.addEventListener("scroll", () => {
+    handleNavbarFixed(), handleButtonToTop();
+  });
 
-  /* ===HANDLE CLICK MENU BAR MOBILE=== */
+  //! ===HANDLE CLICK MENU BAR MOBILE=== */
   let countClick = 1;
   let countClick2 = 1;
   iconMenuBar.addEventListener("click", () => {
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
     countClick2++;
   });
 
-  /* ===ISOTOPE JS=== */
+  //! ===ISOTOPE JS=== */
   var elem = document.querySelector(".grid-card");
 
   var iso = new Isotope(elem, {
@@ -159,10 +159,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* ===SCROLL REVEAL JS=== */
+  //! ===SCROLL REVEAL JS=== */
   const sr = ScrollReveal({
     origin: "top",
-    duration: 4000,
+    duration: 3000,
     reset: true,
   });
 
@@ -191,6 +191,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // ScrollReveal().reveal(".about-reveal", topDown);
   // ScrollReveal().reveal(".about-reveal-2", topDown2);
   // ScrollReveal().reveal(".about-reveal-3", topDown3);
+
+  /* ===REVEAL UTILITIES=== */
+  /* reveal top down */
+  sr.reveal(".reveal-top-down", { distance: "20%" });
+  sr.reveal(".reveal-top-down-10", { distance: "10%" });
+  sr.reveal(".reveal-top-down-10-delay1", { distance: "10%", delay: 400 });
+  sr.reveal(".reveal-top-down-10-delay2", { distance: "10%", delay: 600 });
+  sr.reveal(".reveal-top-down-10-delay3", { distance: "10%", delay: 800 });
+  sr.reveal(".reveal-top-down-10-delay4", { distance: "10%", delay: 1000 });
+  sr.reveal(".reveal-top-down-20", { distance: "20%" });
+  sr.reveal(".reveal-top-down-30", { distance: "30%" });
+  sr.reveal(".reveal-top-down-40", { distance: "40%" });
+
+  /* reveal left right */
+  sr.reveal(".reveal-left-right", { distance: "20%", origin: "left" });
+  sr.reveal(".reveal-right-left", { distance: "20%", origin: "right" });
 
   /* reveal about */
   sr.reveal(".reveal-about-icon", { distance: "20%" });
@@ -227,7 +243,22 @@ document.addEventListener("DOMContentLoaded", function () {
   /* reveal product */
   sr.reveal(".reveal-product", { distance: "5%", origin: "left" });
 
-  /* ===DARK/ LIGHT MODE=== */
+  /* reveal testimonial */
+  sr.reveal(".reveal-testimonial-text", { distance: "20%" });
+  sr.reveal(".reveal-testimonial-slider", { distance: "20%" });
+
+  /* reveal statistics */
+  sr.reveal(".reveal-statistics", { distance: "10%" });
+
+  /* reveal brand */
+  sr.reveal(".reveal-brand-item-1", { distance: "40%" });
+  sr.reveal(".reveal-brand-item-2", { distance: "60%", delay: 400 });
+  sr.reveal(".reveal-brand-item-3", { distance: "80%", delay: 500 });
+  sr.reveal(".reveal-brand-item-4", { distance: "100%", delay: 600 });
+  sr.reveal(".reveal-brand-item-5", { distance: "120%", delay: 700 });
+  sr.reveal(".reveal-brand-item-6", { distance: "140%", delay: 800 });
+
+  //! ===DARK/ LIGHT MODE=== */
 
   const html = document.querySelector("html");
   const themeIconMobile = document.getElementById("themeIconMobile");
@@ -264,24 +295,22 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("mode", "light");
   }
 
-  /* ===END DARK/ LIGHT MODE=== */
+  //! ===END DARK/ LIGHT MODE=== */
 
-
-  /* ===HANDLE OFFER CARD ROTATING=== */
-  const blockCardItem2s = document.querySelectorAll('.block-card-item2');
-  const blockCardItem1s = document.querySelectorAll('.block-card-item1');
+  //! ===HANDLE OFFER CARD ROTATING=== */
+  const blockCardItem2s = document.querySelectorAll(".block-card-item2");
+  const blockCardItem1s = document.querySelectorAll(".block-card-item1");
   const billMonthly = document.getElementById("billMonthly");
-  const billAnnually = document.getElementById("billAnnually"); 
+  const billAnnually = document.getElementById("billAnnually");
   let countNumber = 1;
 
   document.querySelector("label").addEventListener("click", function () {
     const checkbox = document.getElementById("toggle");
-    if(checkbox.checked) {
-      
-      blockCardItem2s.forEach(item => {
+    if (checkbox.checked) {
+      blockCardItem2s.forEach((item) => {
         item.classList.toggle("rotateY-0");
       });
-      blockCardItem1s.forEach(item => {
+      blockCardItem1s.forEach((item) => {
         item.classList.toggle("rotateY-180");
       });
     }
@@ -294,13 +323,87 @@ document.addEventListener("DOMContentLoaded", function () {
     blockCardItem1s.forEach((item) => {
       item.classList.remove("rotateY-180");
     });
-  }
+  };
 
+  //! ===HANDLE VIDEO SHOW=== */
+  const toVideo = document.getElementById('toVideo');
+  const video = document.getElementById('video');
+  const blackVideoLayer = document.getElementById("blackVideoLayer");
 
-  /* ===WINDOW LOAD=== */
+  const handleShowVideo = () => {
+    video.classList.replace("hidden", "fixed");
+    blackVideoLayer.classList.replace("hidden", "fixed");
+
+    // Ngăn chặn sự kiện click trên video để không ẩn video khi nhấn vào chính nó
+    video.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+  };
+
+  const handleRemoveShowVideo = (event) => {
+    // Kiểm tra nếu click không phải là trên video và nút toVideo thì mới ẩn video
+    if (!video.contains(event.target) && event.target !== toVideo) {
+      video.classList.replace("fixed", "hidden");
+      blackVideoLayer.classList.replace("fixed", "hidden");
+
+      // Pause và đặt lại thời gian video về 0 khi ẩn
+      video.pause();
+      video.currentTime = 0;
+    }
+  };
+
+  toVideo.addEventListener("click", (event) => {
+    // Ngăn chặn sự kiện lan truyền lên document khi nhấn nút
+    event.stopPropagation();
+    handleShowVideo();
+  });
+
+  document.addEventListener("click", handleRemoveShowVideo);
+  
+
+  //! ===WINDOW LOAD=== */
   window.addEventListener("load", () => {
     header.classList.remove("fixed-nav");
     handleRotateOfferCardProblem();
   });
 
+  //! ===SWIPER JS=== */
+  const swiper = new Swiper(".swiper", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+    // slidesPerView: 2, // Một slide trên màn hình
+    // spaceBetween: 30, // Khoảng cách giữa các slide
+
+    spaceBetween: 30, // Có thể giảm khoảng cách giữa các slide trên thiết bị di động
+
+    breakpoints: {
+      1280: {
+        slidesPerView: 2,
+        spaceBetween: 50, // Có thể giảm khoảng cách giữa các slide trên thiết bị di động
+        slidesPerGroup: 2,
+      },
+
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 30, // Có thể giảm khoảng cách giữa các slide trên thiết bị di động
+        slidesPerGroup: 2, // Trượt 2 slide mỗi lần
+        // centeredSlides: true,
+      },
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  //! ===COUNT UP JS===  */
+  $(".counter").countUp({
+    time: 2000,
+    delay: 10,
+  });
 }); /* end document load content */
+
+

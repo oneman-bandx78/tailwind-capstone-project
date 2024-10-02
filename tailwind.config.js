@@ -29,7 +29,12 @@ module.exports = {
         bgDark: "#181c31",
         bgCardDark: "#1c2136",
         bgOfferCardDark: "#181c31",
+        bgBlackLayer: "#0000008a",
+        bgBlurLayer: "#ffffff30",
       },
+      // backgroundImage: {
+      //   "custom-bg-img": "linear-gradient(to bottom, blue 50%, red 50%)",
+      // },
       boxShadow: {
         customNav: "5px 1px 2px 0px #79808a61",
         customNavDark: "1px 1px 1px #ffffff78",
