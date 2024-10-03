@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const header = document.getElementById("header");
   const changeIconColors = document.querySelectorAll(".changeIconColor");
   const buttonToTop = document.getElementById("buttonToTop");
+  const aTag = document.getElementsByTagName("a");
+
+  Array.from(aTag).forEach((element) => {
+    element.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+  });
 
   //! ===HANDLE SCROLL FIXED NAVBAR===  */
 
@@ -86,6 +93,15 @@ document.addEventListener("DOMContentLoaded", function () {
     enableScroll();
   });
 
+  const handleHiddenMenuMobile = () => {
+    listMenuMobile.classList.replace("translate-x-0", "-translate-x-full");
+    iconMenuBar.classList.replace("ri-close-line", "ri-menu-line");
+    blackLayer.classList.add("hidden");
+    enableScroll();
+  };
+
+  listMenuMobile.addEventListener("click", handleHiddenMenuMobile);
+
   // Hàm ngăn hành vi mặc định
   function preventDefault(e) {
     e.preventDefault();
@@ -142,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+
   // Lấy tất cả các nút bấm
   var filterButtons = document.querySelectorAll(".button-filter-group li");
 
@@ -159,11 +176,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+
   //! ===SCROLL REVEAL JS=== */
   const sr = ScrollReveal({
     origin: "top",
     duration: 3000,
-    reset: true,
+    reset: false,
   });
 
   // or #2:
@@ -173,19 +191,19 @@ document.addEventListener("DOMContentLoaded", function () {
     duration: 2500,
     // opacity: null,
     // delay: "",
-    reset: true,
+    reset: false,
   };
   const topDown2 = {
     origin: "top",
     distance: "30%", //or %
     duration: 2500,
-    reset: true,
+    reset: false,
   };
   const topDown3 = {
     origin: "top",
     distance: "40%", //or %
     duration: 2500,
-    reset: true,
+    reset: false,
   };
 
   // ScrollReveal().reveal(".about-reveal", topDown);
@@ -326,8 +344,8 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   //! ===HANDLE VIDEO SHOW=== */
-  const toVideo = document.getElementById('toVideo');
-  const video = document.getElementById('video');
+  const toVideo = document.getElementById("toVideo");
+  const video = document.getElementById("video");
   const blackVideoLayer = document.getElementById("blackVideoLayer");
 
   const handleShowVideo = () => {
@@ -359,7 +377,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.addEventListener("click", handleRemoveShowVideo);
-  
 
   //! ===WINDOW LOAD=== */
   window.addEventListener("load", () => {
@@ -405,5 +422,3 @@ document.addEventListener("DOMContentLoaded", function () {
     delay: 10,
   });
 }); /* end document load content */
-
-

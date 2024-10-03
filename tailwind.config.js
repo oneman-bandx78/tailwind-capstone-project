@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./*.{html,js}"],
   darkMode: "selector",
   theme: {
     screens: {
-      sm: "640px", // min-width: 640px (mobile)
+      sm: "375px", // min-width: 640px (mobile)
       md: "768px", // tablet
       lg: "1024px", // laptop and up
       xl: "1280px",

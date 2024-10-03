@@ -28,7 +28,9 @@
     <!--! custom css -->
     <link rel="stylesheet" href="../dist/output.css">
 
-    <link rel="stylesheet" href="../node_modules/remixicon/fonts/remixicon.css">
+    <!--! remix icon -->
+    <!-- <link rel="stylesheet" href="../node_modules/remixicon/fonts/remixicon.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
 
 
@@ -218,7 +220,7 @@
                         layout. The point of using Lorem Ipsum.</p>
                     <div id="toVideo" class="flex gap-5 items-center">
                         <i id="playIcon"
-                            class="ri-play-fill flex justify-center items-center text-2xl  text-white rounded-full w-12 h-12 bg-bgPrimary cursor-pointer relative "></i>
+                            class="ri-play-fill flex justify-center items-center text-2xl  text-white rounded-full w-12 h-8 md:h-12 bg-bgPrimary cursor-pointer relative "></i>
                         <a  class=" text-lg text-text_2 cursor-pointer dark:text-text_1">SEE HOW WE WORK</a>
                     </div>
                 </div>
@@ -259,7 +261,7 @@
 
 
             <div
-                class=" container text-center flex flex-col items-center  absolute top-[333px] xl:top-[60%] left-1/2 -translate-x-1/2">
+                class=" container text-center flex flex-col items-center  absolute top-[80%] md:top-2/3 xl:top-[60%] left-1/2 -translate-x-1/2">
 
                 <div class=" flex flex-col md:flex-row justify-center gap-12 sm:pt-20 md:pt-10 ">
                     <div class="reveal-team-img1">
@@ -464,7 +466,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 lg:gap-10 ">
                         <div class="block-card reveal-card-1">
                             <div
-                                class="block-card-item1 rotateY-180 bg-white dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg sm:w-[390px] md:w-full">
+                                class="block-card-item1 rotateY-180 bg-white dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg ">
                                 <h2 class="text-2xl font-medium dark:text-white ">Starter</h2>
                                 <div class="space-y-3 flex flex-col items-center">
                                     <p class="flex gap-2 justify-center items-center dark:text-white"> <span
@@ -480,7 +482,7 @@
                                 <p class="dark:text-white">7-day free trial</p>
                             </div>
                             <div
-                                class="block-card-item2 rotateY-0 bg-white  dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg sm:w-[390px] md:w-full">
+                                class="block-card-item2 rotateY-0 bg-white  dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg ">
                                 <h2 class="text-2xl font-medium  ">Starter</h2>
                                 <div class="space-y-3 flex flex-col items-center ">
                                     <p class="flex gap-2 justify-center items-center line-through"> <span
@@ -518,7 +520,7 @@
                                 <p class="dark:text-white">7-day free trial</p>
                             </div>
                             <div
-                                class="block-card-item2  bg-white  dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg sm:w-[390px] md:w-full">
+                                class="block-card-item2  bg-white  dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg ">
                                 <h2 class="text-2xl font-medium  ">Growth Plan</h2>
                                 <div class="space-y-3 flex flex-col items-center ">
                                     <p class="flex gap-2 justify-center items-center line-through"> <span
@@ -557,7 +559,7 @@
                                 <p class="dark:text-white">7-day free trial</p>
                             </div>
                             <div
-                                class="block-card-item2  bg-white  dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg sm:w-[390px] md:w-full">
+                                class="block-card-item2  bg-white  dark:bg-bgOfferCardDark space-y-10 text-center p-12 rounded-lg ">
                                 <h2 class="text-2xl font-medium  ">Business</h2>
                                 <div class="space-y-3 flex flex-col items-center ">
                                     <p class="flex gap-2 justify-center items-center line-through"> <span
@@ -605,7 +607,7 @@
 
                 <div class=" flex flex-col items-center justify-center">
                     <ul
-                        class="button-filter-group my-12 w-[80%] md:w-[90%] lg:w-[68%] xl:w-[55%] flex  justify-center md:justify-around items-center gap-1 md:gap-5 bg-white  rounded-full py-2 shadow-customService ">
+                        class="button-filter-group my-12 w-[90%] md:w-[90%] lg:w-[68%] xl:w-[55%] flex flex-wrap justify-center md:justify-around items-center gap-1 md:gap-5 bg-white  rounded-full py-2 shadow-customService ">
                         <li class="text-sm text-text_1 md:paragraph active-button-filter px-4  hover:text-primaryColor duration- cursor-pointer"
                             data-filter="*">
                             All</li>
@@ -686,15 +688,15 @@
 
                 <div class="reveal-testimonial-slider swiper-wrapper  mt-14 flex rounded-md  ">
                     <div
-                        class="swiper-slide bg-white p-7 rounded-md  shrink-0 flex gap-5 items-center relative shadow-lg dark:bg-bgCardDark">
+                        class="swiper-slide bg-white p-7 rounded-md  shrink-0 flex flex-col md:flex-row text-center md:text-start gap-5 items-center relative shadow-lg dark:bg-bgCardDark">
                         <img src="../assets/testimonial.png" class="w-[35%]  lg:w-[45%] object-contain rounded-md "
                             alt="">
                         <div class="">
                             <img src="../assets/icon-quote.svg" class="w-[10%]" alt="">
-                            <p class="paragraph w-[90%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            <p class="sm:text-sm md:paragraph w-[90%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                 Quisquibusdam </p>
                             <p class="mt-5 text-lg dark:text-white">David Smith</p>
-                            <div class="flex gap-5 items-center justify-between">
+                            <div class="mt-7 flex gap-5 items-center justify-between">
                                 <small class="text-text_1">Founter @democompany</small>
                                 <img src="../assets/brand-light-02.svg" alt="">
                             </div>
@@ -704,15 +706,15 @@
                         </div>
                     </div>
                     <div
-                        class="swiper-slide bg-white p-7 rounded-md  shrink-0 flex gap-5 items-center relative shadow-lg dark:bg-bgCardDark">
+                        class="swiper-slide bg-white p-7 rounded-md  shrink-0 flex flex-col md:flex-row text-center md:text-start gap-5 items-center relative shadow-lg dark:bg-bgCardDark">
                         <img src="../assets/testimonial-2.png" class="w-[35%]  lg:w-[45%] object-contain rounded-md "
                             alt="">
                         <div class="">
                             <img src="../assets/icon-quote.svg" class="w-[10%]" alt="">
-                            <p class="paragraph w-[90%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            <p class="sm:text-sm md:paragraph w-[90%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                 Quisquibusdam </p>
                             <p class="mt-5 text-lg dark:text-white">David Smith</p>
-                            <div class="flex gap-5 items-center justify-between">
+                            <div class="mt-7 flex gap-5 items-center justify-between">
                                 <small class="text-text_1">Founter @democompany</small>
                                 <img src="../assets/brand-light-02.svg" alt="">
                             </div>
@@ -722,15 +724,15 @@
                         </div>
                     </div>
                     <div
-                        class="swiper-slide bg-white p-7 rounded-md  shrink-0 flex gap-5 items-center relative shadow-lg dark:bg-bgCardDark">
+                        class="swiper-slide bg-white p-7 rounded-md  shrink-0 flex flex-col md:flex-row text-center md:text-start gap-5 items-center relative shadow-lg dark:bg-bgCardDark">
                         <img src="../assets/testimonial-3.png" class="w-[35%]  lg:w-[45%] object-contain rounded-md "
                             alt="">
                         <div class="">
                             <img src="../assets/icon-quote.svg" class="w-[10%]" alt="">
-                            <p class="paragraph w-[90%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            <p class="sm:text-sm md:paragraph w-[90%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                 Quisquibusdam </p>
                             <p class="mt-5 text-lg dark:text-white">David Smith</p>
-                            <div class="flex gap-5 items-center justify-between">
+                            <div class="mt-7 flex gap-5 items-center justify-between">
                                 <small class="text-text_1">Founter @democompany</small>
                                 <img src="../assets/brand-light-02.svg" alt="">
                             </div>
@@ -740,15 +742,15 @@
                         </div>
                     </div>
                     <div
-                        class="swiper-slide bg-white p-7 rounded-md  shrink-0 flex gap-5 items-center relative shadow-lg dark:bg-bgCardDark">
+                        class="swiper-slide bg-white p-7 rounded-md  shrink-0 flex flex-col md:flex-row text-center md:text-start gap-5 items-center relative shadow-lg dark:bg-bgCardDark">
                         <img src="../assets/testimonial-4.png" class="w-[35%]  lg:w-[45%] object-contain rounded-md "
                             alt="">
                         <div class="">
                             <img src="../assets/icon-quote.svg" class="w-[10%]" alt="">
-                            <p class="paragraph w-[90%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            <p class="sm:text-sm md:paragraph w-[90%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                 Quisquibusdam </p>
                             <p class="mt-5 text-lg dark:text-white">David Smith</p>
-                            <div class="flex gap-5 items-center justify-between">
+                            <div class="mt-7 flex gap-5 items-center justify-between">
                                 <small class="text-text_1">Founter @democompany</small>
                                 <img src="../assets/brand-light-02.svg" alt="">
                             </div>
@@ -757,6 +759,7 @@
                             </div>
                         </div>
                     </div>
+
 
                 </div>
 
@@ -786,23 +789,23 @@
             <div class=" container ">
                 <div class="reveal-statistics flex justify-between text-center">
                     <div class="space-y-3">
-                        <h1 class="counter text-5xl dark:text-white font-bold">785</h1>
-                        <p class="text-lg font-semibold text-text_1">Global Brands
+                        <h1 class="counter text-4xl md:text-5xl dark:text-white font-bold">785</h1>
+                        <p class="text-base md:text-lg font-semibold text-text_1">Global Brands
                         </p>
                     </div>
                     <div class="space-y-3">
-                        <h1 class="counter text-5xl dark:text-white font-bold">533</h1>
-                        <p class="text-lg font-semibold text-text_1">Happy Clients
+                        <h1 class="counter text-4xl md:text-5xl dark:text-white font-bold">533</h1>
+                        <p class="text-base md:text-lg font-semibold text-text_1">Happy Clients
                         </p>
                     </div>
                     <div class="space-y-3">
-                        <h1 class="counter text-5xl dark:text-white font-bold">865</h1>
-                        <p class="text-lg font-semibold text-text_1">Winning Award
+                        <h1 class="counter text-4xl md:text-5xl dark:text-white font-bold">865</h1>
+                        <p class="text-base md:text-lg font-semibold text-text_1">Winning Award
                         </p>
                     </div>
                     <div class="space-y-3">
-                        <h1 class="counter text-5xl dark:text-white font-bold">346</h1>
-                        <p class="text-lg font-semibold text-text_1">Global Brands
+                        <h1 class="counter text-4xl md:text-5xl dark:text-white font-bold">346</h1>
+                        <p class="text-base md:text-lg font-semibold text-text_1">Global Brands
                         </p>
                     </div>
                 </div>
@@ -1120,11 +1123,11 @@
     hover:-translate-y-1 hover:text-black duration-500 "><i class="fa-solid fa-chevron-up"></i></a>
     <!--! end button scroll up -->
 
-    <!--! isotope js -->
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
-
     <!--! scroll reveal js -->
     <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--! isotope js -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 
     <!--! swiper js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
