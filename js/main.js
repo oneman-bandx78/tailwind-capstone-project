@@ -1,3 +1,7 @@
+// import ScrollReveal from 'scrollreveal';
+// import Isotope from 'isotope-layout';
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const listMenuMobile = document.getElementById("listMenuMobile");
   const iconMenuBar = document.getElementById("iconMenuBar");
